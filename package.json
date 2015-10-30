@@ -1,0 +1,34 @@
+{
+  "name": "nginject-migration",
+  "version": "0.0.1",
+  "description": "Utility to migrate from legacy @ngInject pre-minifier syntax to \"ngInject\" syntax",
+  "main": "index.js",
+  "bin": "./bin/cli.js",
+  "scripts": {},
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/bholloway/nginject-migration"
+  },
+  "keywords": [
+    "annotate",
+    "ng-annotate",
+    "ngInject",
+    "angular",
+    "minify",
+    "preminifiy",
+    "minification",
+    "preminification",
+    "utility",
+    "migration"
+  ],
+  "author": "bholloway",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/bholloway/nginject-migration/issues"
+  },
+  "homepage": "https://github.com/bholloway/nginject-migration",
+  "dependencies": {
+    "esprima": "^2.7.0",
+    "sourcemap-to-ast": "^0.0.2"
+  }
+}
