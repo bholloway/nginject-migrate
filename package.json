@@ -29,6 +29,6 @@
   "homepage": "https://github.com/bholloway/nginject-migration",
   "dependencies": {
     "esprima": "^2.7.0",
-    "sourcemap-to-ast": "^0.0.2"
+    "source-map": "^0.5.3"
   }
 }
