@@ -16,7 +16,7 @@ function withDefaultValue(defaultValue) {
      * sd
      * @ngInject
      */
-    return function appVersionFactory($window) {
+    return /**@ngInject*/ /**@ngInject*/ function appVersionFactory($window) {
         if ('Windows' in $window) {
             var thisPackage = $window.Windows.ApplicationModel.Package.current;
             var version = thisPackage.id.version;
