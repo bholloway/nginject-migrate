@@ -23,7 +23,7 @@ program
   .option('-g, --glob [value]', 'A glob to match')
   .option('-l, --list', 'Optionally list of files that will be considered')
   .option('-o, --output [value]', 'An optional output directory')
-  .option('-s, --source-map', 'Generate a source-map file per the given extension')
+  .option('-s, --source-map [value]', 'Generate a source-map file per the given extension')
   .action(function (options) {
     convert(options)
       .then(options.list && getReporter('processed') || noop)
