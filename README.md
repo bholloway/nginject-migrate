@@ -1,6 +1,6 @@
-# ngInject migration
+# ngInject migrate
 
-[![NPM](https://nodei.co/npm/nginject-migration.png)](http://github.com/bholloway/nginject-migration)
+[![NPM](https://nodei.co/npm/nginject-migrate.png)](http://github.com/bholloway/nginject-migrate)
 
 Utility to migrate from legacy @ngInject pre-minifier syntax to "ngInject" syntax
 

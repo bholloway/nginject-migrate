@@ -1,3 +1,3 @@
 module.exports = {
-  process: require('./lib/process')
+  process: require('./lib/process/process-sync')
 };
