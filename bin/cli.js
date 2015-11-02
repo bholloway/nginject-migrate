@@ -1,6 +1,8 @@
 #!/usr/bin/env node
 'use strict';
 
+var startTime = Date.now();
+
 var program = require('commander');
 
 var list    = require('../lib/commands/list'),
@@ -9,7 +11,12 @@ var list    = require('../lib/commands/list'),
 program
   .command('list')
   .option('-g, --glob [value]', 'A glob to match')
-  .action(list);
+  .action(function (options) {
+    list(options)
+      .then(getReporter('found'))
+      .catch(getReporter('failed for'))
+      .finally(complete);
+  });
 
 program
   .command('convert')
@@ -17,8 +24,32 @@ program
   .option('-l, --list', 'Optionally list of files that will be considered')
   .option('-o, --output [value]', 'An optional output directory')
   .option('-s, --source-map', 'Generate a source-map file per the given extension')
-  .action(convert);
+  .action(function (options) {
+    convert(options)
+      .then(options.list && getReporter('found') || noop)
+      .catch(getReporter('failed for'))
+      .finally(complete);
+  });
 
 program
   .version(require('../package.json').version)
   .parse(process.argv);
+
+function getReporter(message) {
+  return function reporter(files) {
+    var prefix = [
+        message,
+        Array.isArray(files) && files.length
+      ]
+        .filter(Boolean)
+        .join(' ') + ':';
+    console.log([prefix].concat(files).join('\n\t'));
+  }
+}
+
+function complete() {
+  console.log('completed in', Math.round(Date.now() - startTime) / 1000, 'seconds');
+}
+
+function noop() {
+}
