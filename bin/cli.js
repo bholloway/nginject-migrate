@@ -26,7 +26,7 @@ program
   .option('-s, --source-map', 'Generate a source-map file per the given extension')
   .action(function (options) {
     convert(options)
-      .then(options.list && getReporter('found') || noop)
+      .then(options.list && getReporter('processed') || noop)
       .catch(getReporter('failed for'))
       .finally(complete);
   });
