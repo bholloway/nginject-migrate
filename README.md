@@ -6,7 +6,41 @@ Utility to migrate from legacy @ngInject pre-minifier syntax to "ngInject" synta
 
 ## CLI Usage
 
+There is a simply CLI that can convert your original codebase, to the extent that it is parsable by Esprima 2.x. This
+includes some but not all ES6 syntax.
 
+To use the CLI you need to install as a global package.
+
+```
+npm i -g nginject-migrate
+```
+
+### list
+
+List the files that will be processed per the given glob.
+
+```
+nginject-migrate list -g "myDir/**/*.js"
+```
+
+Options:
+
+* `-g, --glob [value]` A glob to match, default is `**/*.js`
+
+### convert
+
+Convert files **in place** that match the given glob.
+
+```
+nginject-migrate convert -g "myDir/**/*.js"
+```
+
+Options:
+
+* `-g, --glob [value]` A glob to match, default is `**/*.js`
+* `-l, --list` Optionally list of files that will be considered
+* `-o, --output [value]` An optional output directory
+* `-s, --source-map [value]` Generate a source-map file per the given extension
 
 ## API Usage
 
