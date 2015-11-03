@@ -39,8 +39,8 @@ Options:
 
 * `-g, --glob [value]` A glob to match, default is `**/*.js`
 * `-l, --list` Optionally list of files that will be considered
-* `-o, --output [value]` An optional output directory
-* `-s, --source-map [value]` Generate a source-map file per the given extension
+* `-s, --source-map [value]` Generate an optional source-map file per the given extension
+* `-q, --quote-char [value]` Optionally specify the quotation character for strings
 
 ## API Usage
 
