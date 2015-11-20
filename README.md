@@ -44,7 +44,7 @@ Options:
 
 ## API Usage
 
-### `process(content, options):object`
+### `processSync(content, options):object`
 
 Migrate the given content.
 
@@ -54,4 +54,4 @@ Where options are `{sourceMap:object, filename:string, quoteChar:string}`.
 
 If the `sourceMap` option is truthy then a source-map is generated. Otherwise it will be `null` in the output. If it is of type `object` then it is expected to be the incoming source-map. Where source-map is used then a `filename` option should indicate the current source.
 
-The optional `quoteChar` option indicates the string literal deliniator.
+The optional `quoteChar` option indicates the string literal delineator to use in the output `content`.
